@@ -36,6 +36,10 @@ class Solution {
            if(vis[i][j]==true)continue;
 
            vis[i][j]=true;
+
+           if(i==n-1 && j==m-1){
+            return prevdif;
+           }
           
         
         //right
