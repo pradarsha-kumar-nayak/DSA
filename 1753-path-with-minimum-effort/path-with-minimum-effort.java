@@ -80,7 +80,7 @@ class Solution {
 
         }
 
-        return diff[n-1][m-1];
+        return -1;
 
     }
 }
