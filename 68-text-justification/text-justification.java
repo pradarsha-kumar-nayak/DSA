@@ -1,27 +1,27 @@
 class Solution {
     public String helper(int fst,int lst,int divgadha,int extragadha,String words[], int maxWidth){
         
-        String str="";
+        StringBuilder str=new StringBuilder();
         for(int i=fst;i<lst;i++){
            
-           str+=words[i];
+        str.append(words[i]);
         if(i != lst-1){ 
            for(int j=0;j<divgadha;j++){
-            str+=" ";
+            str.append(" ");
            }
 
            if(extragadha >0){
-            str+=" ";
+            str.append(" ");
             extragadha--;
            }
          }
         }
 
         while(str.length() <maxWidth){
-            str+=" ";
+            str.append(" ");
         }
 
-        return str;
+        return str.toString();
 
     }
     public List<String> fullJustify(String[] words, int maxWidth) {
