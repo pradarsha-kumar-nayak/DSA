@@ -12,7 +12,7 @@ class Solution {
 
         long diff=upper - lower+1;
 
-        res+=(diff*comma);
+        res+=diff*comma;
 
         lower=lower*1000;
         comma++;
