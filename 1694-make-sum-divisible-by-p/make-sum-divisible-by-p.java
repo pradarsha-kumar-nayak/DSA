@@ -12,9 +12,9 @@ class Solution {
             return 0;
         }
 
-        // if(totalsum <p){
-        //     return -1;
-        // }
+        if(totalsum <p){
+            return -1;
+        }
 
        HashMap<Integer,Integer>hm=new HashMap<>();
        hm.put(0,-1);
