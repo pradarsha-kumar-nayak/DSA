@@ -35,6 +35,6 @@ class Solution {
            hm.put(cur,i);
         }
 
-        return minlen== nums.length || minlen==Integer.MAX_VALUE?-1:minlen;
+        return minlen== nums.length ?-1:minlen;
     }
 }
