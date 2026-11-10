@@ -1,42 +1,70 @@
 class Solution {
-    int len;
-    public int solve(int i, int[] costs,int dp[]){
-        if(i >len){
-            return 10000000;
-        }
+    // int len;
+    // public int solve(int i, int[] costs,int dp[]){
+    //     if(i >len){
+    //         return 10000000;
+    //     }
 
-        if(i == len){
-           return 0;
-        }
+    //     if(i == len){
+    //        return 0;
+    //     }
 
-        if(dp[i] !=-1){
-            return dp[i];
-        }
+    //     if(dp[i] !=-1){
+    //         return dp[i];
+    //     }
 
     
-           int fst=costs[i]+1*1+solve(i+1,costs,dp);
+    //        int fst=costs[i]+1*1+solve(i+1,costs,dp);
            
-           int sec=10000000;
-           if(i+2 <=len){
-               sec=costs[i+1]+2*2+solve(i+2,costs,dp);
-           }
+    //        int sec=10000000;
+    //        if(i+2 <=len){
+    //            sec=costs[i+1]+2*2+solve(i+2,costs,dp);
+    //        }
            
-           int trd=10000000;
+    //        int trd=10000000;
 
-           if(i+3 <= len){
-                trd=costs[i+2]+3*3+solve(i+3,costs,dp);
-           }
+    //        if(i+3 <= len){
+    //             trd=costs[i+2]+3*3+solve(i+3,costs,dp);
+    //        }
           
-        return dp[i]= Math.min(fst,Math.min(sec,trd));
+    //     return dp[i]= Math.min(fst,Math.min(sec,trd));
 
-    }
+    // }
     public int climbStairs(int n, int[] costs) {
         
-        int dp[]=new int[n];
+        int dp[]=new int[n+1];
 
-        Arrays.fill(dp,-1);
+        // Arrays.fill(dp,-1);
 
-        len=n;
-        return solve(0,costs,dp);
+        // len=n;
+        // return solve(0,costs,dp);
+
+        dp[0]=0;
+
+        for(int i=1;i<=n;i++){
+           
+           int fst=costs[i-1]+1*1+dp[i-1];
+           
+           int sec=10000000;
+           if(i-2 >=0){
+            sec=costs[i-1]+2*2+dp[i-2];
+           }
+
+           int trd=10000000;
+           if(i-3 >=0){
+            trd=costs[i-1]+3*3+dp[i-3];
+           }
+
+
+           dp[i]= Math.min(fst,Math.min(sec,trd));
+
+
+        }
+
+
+        return dp[n];
+
+
+
     }
 }
