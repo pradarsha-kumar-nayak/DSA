@@ -1,7 +1,7 @@
 class Solution {
     public boolean solve(int nums[],int size,int base){
          HashMap<Long,Integer>hm=new HashMap<>();   // CHANGE: Integer -> Long
-        long MOD=1_000_000_007L;                   // CHANGE: new line
+        int MOD=1000000007;                   // CHANGE: new line
         long hash=0;                               // CHANGE: int -> long
 
         long p=1;                                  // CHANGE: Math.pow((int) cast) hata ke loop + mod
